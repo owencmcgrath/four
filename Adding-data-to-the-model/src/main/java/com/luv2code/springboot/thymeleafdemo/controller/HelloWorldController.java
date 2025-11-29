@@ -12,7 +12,7 @@ public class HelloWorldController {
 
     @RequestMapping("/showForm")
     public String showForm() {
-        return "helloworld-form";
+        return "Movie";
     }
 
     // need a controller method to process the HTML form
@@ -24,7 +24,7 @@ public class HelloWorldController {
     // need a controller method to read form data and
     // add data to the model
 
-    @RequestMapping("/processFormVersionTwo")
+    @RequestMapping("/MovieName")
     public String letsShoutDude(HttpServletRequest request, Model model) {
 
         // read the request parameter from the HTML form
@@ -34,7 +34,7 @@ public class HelloWorldController {
         theName = theName.toUpperCase();
 
         // create the message
-        String result = "Yo! " + theName;
+        String result = theName + " is my favorite movie";
 
         // add message to the model
         model.addAttribute("message", result);
